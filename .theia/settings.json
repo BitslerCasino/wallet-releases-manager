@@ -1,0 +1,45 @@
+{
+  "git.decorations.colors": false,
+  "editor.tabSize": 2,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true
+  },
+  "list.openMode": "doubleClick",
+  "workspace.preserveWindow": true,
+  "navigator.exclude": {
+    "**/.git": true,
+    "**/node_modules": true
+  },
+  "lebabify.transforms": [
+    "arrow",
+    "arg-rest",
+    "obj-method",
+    "obj-shorthand",
+    "class",
+    "let",
+    "includes",
+    "template",
+    "for-of",
+    "exponent",
+    "default-param",
+    "commonjs"
+  ],
+  "editor.formatOnSave": false,
+  "lebabify.enable": true,
+  "lebabify.showErrors": true,
+  "lebabify.showWarnings": true,
+  "lebabify.beautify": {
+    "indent_size": 2,
+    "eol": "\n",
+    "preserve_newlines": true,
+    "max_preserve_newlines": 2,
+    "space_after_anon_function": false,
+    "brace_style": "collapse,preserve-inline",
+    "unindent_chained-methods": true,
+    "keep_array_indentation": true
+  },
+  "editor.autoSave": "off",
+  "workspace.supportMultiRootWorkspace": true
+}

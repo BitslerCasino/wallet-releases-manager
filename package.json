@@ -1,0 +1,23 @@
+{
+  "name": "wallet-releases-manager",
+  "version": "1.0.0",
+  "description": "check for new wallet releases and create a new docker image release",
+  "main": "index.js",
+  "repository": "https://github.com/BitslerCasino/wallet-releases-manager",
+  "author": "Uni Sayo <unibtc@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node -r dotenv/config index.js"
+  },
+  "dependencies": {
+    "@tunnckocore/execa": "^2.2.1",
+    "compare-versions": "^3.4.0",
+    "deepmerge": "^3.2.0",
+    "dot-prop": "^4.2.0",
+    "dotenv": "^6.2.0",
+    "fs-extra": "^7.0.1",
+    "gh-got": "^8.1.0",
+    "phin": "^3.3.0",
+    "slackpost": "^1.2.0"
+  }
+}

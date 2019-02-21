@@ -1,0 +1,16 @@
+{
+  "interval": 1800000,
+  "wallets": [
+    {
+      "name": "eth",
+      "repository": "https://github.com/BitslerCasino/docker-parityeth",
+      "folder_path": "wallets/docker-parityeth",
+      "base_repository": "paritytech/parity-ethereum",
+      "docker_image":"bitsler/docker-parityeth",
+      "update_cmd": "sudo eth-update",
+      "options": {
+        "builds": "stable"
+      }
+    }
+  ]
+}
