@@ -1,3 +1,4 @@
+require('dotenv').config();
 const config = require('./config.json');
 const Db = require('./db');
 const { exec } = require('@tunnckocore/execa');

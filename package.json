@@ -7,7 +7,7 @@
   "author": "Uni Sayo <unibtc@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node -r dotenv/config index.js"
+    "start": "pm2 start index.js --watch"
   },
   "dependencies": {
     "@tunnckocore/execa": "^2.2.1",
