@@ -4,6 +4,7 @@ function getNotifier(walletName) {
     process.env.SLACK,
     'Wallet Updater'
   )
+ slackPost.setChannel('#containers_notif');
   updateNotifier.setUsername(`${walletName ? walletName.toUpperCase():''} Wallet Updater`)
     .setColor(slackPost.COLOR_LIST.WARNING)
     .setIconURL(`https://www.bitsler.com/img/img-${walletName}.png`)
