@@ -4,8 +4,8 @@ function getNotifier(walletName) {
     process.env.SLACK,
     'Wallet Updater'
   )
- updateNotifier.setChannel('#containers_notif');
-  updateNotifier.setUsername(`${walletName ? walletName.toUpperCase():''} Wallet Updater`)
+
+  updateNotifier.setUsername(`${walletName ? walletName.toUpperCase() : ''} Wallet Updater`)
     .setColor(slackPost.COLOR_LIST.WARNING)
     .setIconURL(`https://www.bitsler.com/img/img-${walletName}.png`)
   return updateNotifier;
@@ -22,9 +22,9 @@ module.exports.notify = function(wallet, repo, version, updateCmd, dockerImage) 
     }
   })
 }
-module.exports.start = function() {
+module.exports.sendMessage = function(msg) {
   const notifier = getNotifier()
-  notifier.setTitle('Checking for updates...')
+  notifier.setTitle(msg)
   notifier.send((err) => {
     if (err) {
       console.dir(err);

@@ -13,7 +13,7 @@ async function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
 async function startCheck() {
-  slack.start();
+  slack.sendMessage('Checking for updates...');
   for (const wallets of config.wallets) {
     await db.addCollection(wallets.name);
     await fs.ensureDir(path.resolve(process.env.HOME, 'wallets'));
@@ -39,14 +39,19 @@ async function startCheck() {
           break;
         }
       }
-      const o = await Promise.all(buildTasks);
-      for (const res of o) {
-        console.log(`${res.name}: Updated to ${res.tag}`)
-        slack.notify(res.name,res.repo, res.tag, res.cmd, res.image);
+      if(buildTasks.length) {
+        const o = await Promise.all(buildTasks);
+        for (const res of o) {
+          console.log(`${res.name}: Updated to ${res.tag}`)
+          slack.notify(res.name,res.repo, res.tag, res.cmd, res.image);
+        }
+      }else{
+        slack.sendMessage('No new updates found');
       }
     }
   }
   await delay(config.interval) // 30 minutes
+  startCheck().catch(console.error)
 }
 
 startCheck().catch(console.error)
