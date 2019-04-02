@@ -41,5 +41,6 @@
     "keep_array_indentation": true
   },
   "editor.autoSave": "off",
-  "workspace.supportMultiRootWorkspace": true
+  "workspace.supportMultiRootWorkspace": true,
+  "terminal.integrated.lineHeight": 1
 }
