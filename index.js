@@ -39,13 +39,19 @@ async function startCheck() {
           break;
         }
       }
-      if(buildTasks.length) {
-        const o = await Promise.all(buildTasks);
-        for (const res of o) {
-          console.log(`${res.name}: Updated to ${res.tag}`)
-          slack.notify(res.name,res.repo, res.tag, res.cmd, res.image);
+      if (buildTasks.length) {
+        try {
+          const o = await Promise.all(buildTasks);
+          for (const res of o) {
+            console.log(`${res.name}: Updated to ${res.tag}`)
+            slack.notify(res.name, res.repo, res.tag, res.cmd, res.image);
+          }
+        } catch (e) {
+          console.error(e.stack || e.message);
+          slack.notifyError(wallets.name);
         }
-      }else{
+
+      } else {
         slack.sendMessage('No new updates found');
       }
     }
