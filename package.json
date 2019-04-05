@@ -7,7 +7,7 @@
   "author": "Uni Sayo <unibtc@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "pm2 start index.js"
+    "start": "pm2 stop wallet-release && pm2 start index.js --name wallet-release"
   },
   "dependencies": {
     "@tunnckocore/execa": "^2.2.1",
